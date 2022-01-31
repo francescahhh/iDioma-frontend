@@ -1,3 +1,22 @@
+[insert app name here] is a study tool app designed to provide a place for users to store vocabulary words and notes while learning a foreign language. [app name] allows users to add vocabulary words and definitions to a Ruby on Rails backend and view all the words they have added on a React frontend. Additionally, there is a notes feature that allows users to create, edit, and delete notes on things such as grammar rules and pronunciation. 
+
+As a user, I should be able to create an account. 
+As a user, I should be able to log in to my account. 
+As a user, I should be able to log out of my account. 
+As a user, I should be able to submit a word, definition, and where I encountered that word.
+As a user, I should be able to edit a word’s definition. 
+As a user, I should be able to delete a word and its associated data.
+As a user, I should be able to view all the words I submitted. 
+As a user, I should be able to enter notes in a notes section. 
+As a user, I should be able to edit or delete a note. 
+
+Stretch goals:
+As a user, I should be able to toggle to practice mode to hide the definitions of words. 
+As a user, I should be able to create separate sections for each language I am working on. 
+As a user, I should be able to create, edit, and view a checklist of practice goals. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
