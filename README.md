@@ -1,9 +1,3 @@
-<img width="515" alt="Screen Shot 2022-01-31 at 3 41 50 PM" src="https://user-images.githubusercontent.com/91583383/151885372-b26d55bf-9946-4831-81da-3d3f13aff88f.png">
-<img width="514" alt="Screen Shot 2022-01-31 at 3 42 10 PM" src="https://user-images.githubusercontent.com/91583383/151885382-82c07964-aa73-4c1e-a42f-0d3dd1bd76cd.png">
-<img width="515" alt="Screen Shot 2022-01-31 at 3 31 56 PM" src="https://user-images.githubusercontent.com/91583383/151885424-b3f49204-afcb-4451-82b4-c8fcdf839a40.png">
-<img width="512" alt="Screen Shot 2022-01-31 at 3 38 21 PM" src="https://user-images.githubusercontent.com/91583383/151885433-c6b37b55-b5b2-40da-82c1-7932232c34af.png">
-
-
 [insert app name here] is a study tool app designed to provide a place for users to store vocabulary words and notes while learning a foreign language. [app name] allows users to add vocabulary words and definitions to a Ruby on Rails backend and view all the words they have added on a React frontend. Additionally, there is a notes feature that allows users to create, edit, and delete notes on things such as grammar rules and pronunciation. 
 
 As a user, I should be able to create an account. 
@@ -21,7 +15,10 @@ As a user, I should be able to toggle to practice mode to hide the definitions o
 As a user, I should be able to create separate sections for each language I am working on. 
 As a user, I should be able to create, edit, and view a checklist of practice goals. 
 
-
+<img width="515" alt="Screen Shot 2022-01-31 at 3 41 50 PM" src="https://user-images.githubusercontent.com/91583383/151885372-b26d55bf-9946-4831-81da-3d3f13aff88f.png">
+<img width="514" alt="Screen Shot 2022-01-31 at 3 42 10 PM" src="https://user-images.githubusercontent.com/91583383/151885382-82c07964-aa73-4c1e-a42f-0d3dd1bd76cd.png">
+<img width="515" alt="Screen Shot 2022-01-31 at 3 31 56 PM" src="https://user-images.githubusercontent.com/91583383/151885424-b3f49204-afcb-4451-82b4-c8fcdf839a40.png">
+<img width="512" alt="Screen Shot 2022-01-31 at 3 38 21 PM" src="https://user-images.githubusercontent.com/91583383/151885433-c6b37b55-b5b2-40da-82c1-7932232c34af.png">
 
 # Getting Started with Create React App
 
