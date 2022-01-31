@@ -3,13 +3,21 @@ Project Summary:
 
 User Stories: 
 As a user, I should be able to create an account. 
+
 As a user, I should be able to log in to my account. 
+
 As a user, I should be able to log out of my account. 
+
 As a user, I should be able to submit a word, definition, and where I encountered that word.
+
 As a user, I should be able to edit a word’s definition. 
+
 As a user, I should be able to delete a word and its associated data.
+
 As a user, I should be able to view all the words I submitted. 
+
 As a user, I should be able to enter notes in a notes section. 
+
 As a user, I should be able to edit or delete a note. 
 
 Stretch goals:
