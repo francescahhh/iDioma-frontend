@@ -1,41 +1,37 @@
-Project Summary:
+# [insert name of app here] Frontend README
+
+# Project Summary:
 
 [insert app name here] is a study tool app designed to provide a place for users to store vocabulary words and notes while learning a foreign language. [app name] allows users to add vocabulary words and definitions to a Ruby on Rails backend and view all the words they have added on a React frontend. Additionally, there is a notes feature that allows users to create, edit, and delete notes on things such as grammar rules and pronunciation. 
 
-User Stories:
+# User Stories:
 
-As a user, I should be able to create an account. 
+* As a user, I should be able to create an account. 
+* As a user, I should be able to log in to my account. 
+* As a user, I should be able to log out of my account. 
+* As a user, I should be able to submit a word, definition, and where I encountered that word.
+* As a user, I should be able to edit a word’s definition. 
+* As a user, I should be able to delete a word and its associated data.
+* As a user, I should be able to view all the words I submitted. 
+* As a user, I should be able to enter notes in a notes section. 
+* As a user, I should be able to edit or delete a note. 
 
-As a user, I should be able to log in to my account. 
+# Stretch goals:
 
-As a user, I should be able to log out of my account. 
-
-As a user, I should be able to submit a word, definition, and where I encountered that word.
-
-As a user, I should be able to edit a word’s definition. 
-
-As a user, I should be able to delete a word and its associated data.
-
-As a user, I should be able to view all the words I submitted. 
-
-As a user, I should be able to enter notes in a notes section. 
-
-As a user, I should be able to edit or delete a note. 
-
-Stretch goals:
-
-As a user, I should be able to toggle to practice mode to hide the definitions of words. 
-As a user, I should be able to create separate sections for each language I am working on. 
-As a user, I should be able to create, edit, and view a checklist of practice goals. 
+* As a user, I should be able to toggle to practice mode to hide the definitions of words. 
+* As a user, I should be able to create separate sections for each language I am working on. 
+* As a user, I should be able to create, edit, and view a checklist of practice goals. 
 
 Backend repository is here: https://github.com/francescahhh/language-app-backend
 
-Wireframes/mockups: 
+# Wireframes/mockups: 
 
 <img width="515" alt="Screen Shot 2022-01-31 at 3 41 50 PM" src="https://user-images.githubusercontent.com/91583383/151885372-b26d55bf-9946-4831-81da-3d3f13aff88f.png">
 <img width="514" alt="Screen Shot 2022-01-31 at 3 42 10 PM" src="https://user-images.githubusercontent.com/91583383/151885382-82c07964-aa73-4c1e-a42f-0d3dd1bd76cd.png">
 <img width="515" alt="Screen Shot 2022-01-31 at 3 31 56 PM" src="https://user-images.githubusercontent.com/91583383/151885424-b3f49204-afcb-4451-82b4-c8fcdf839a40.png">
 <img width="512" alt="Screen Shot 2022-01-31 at 3 38 21 PM" src="https://user-images.githubusercontent.com/91583383/151885433-c6b37b55-b5b2-40da-82c1-7932232c34af.png">
+
+# React App info below: 
 
 # Getting Started with Create React App
 
