@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Vocab from "./Vocab";
+import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import Notes from "./Notes";
 import NavBar from "./NavBar";
@@ -15,6 +16,7 @@ function App() {
         <Route path="/vocab" element={<Vocab />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/createaccount" element={<CreateAccount />} />
         <Route path="/" element={<Home />}/>
       </Routes>
       </div>

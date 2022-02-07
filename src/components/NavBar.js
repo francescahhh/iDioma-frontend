@@ -13,6 +13,16 @@ function NavBar() {
       <ul>
       <li>
           <NavLink
+            to="createaccount"
+            style={({ isActive }) =>
+              isActive ? activeStyle : undefined
+            }
+          >
+            Create Account
+          </NavLink>
+        </li>
+      <li>
+          <NavLink
             to="login"
             style={({ isActive }) =>
               isActive ? activeStyle : undefined

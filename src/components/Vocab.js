@@ -5,7 +5,7 @@ import VocabForm from "./VocabForm";
 function Vocab() {
     return (
       <div>
-        <h1>This is my vocab component!</h1>
+        <h1>Vocab Page</h1>
         <VocabForm />
         <VocabCard />
         <VocabCard />
