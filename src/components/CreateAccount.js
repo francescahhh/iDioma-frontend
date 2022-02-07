@@ -18,7 +18,9 @@ function CreateAccount() {
             body: JSON.stringify( { user: {username, password} } )
         })
         .then((res) => res.json())
-        .then(console.log);
+        .then(json => console.log("did it!", json));
+        setUsername('')
+        setPassword('');
     }
 
     return (
