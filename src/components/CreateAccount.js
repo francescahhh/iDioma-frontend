@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 const API = 'http://localhost:3000/api/v1'
 
 function CreateAccount() {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -21,7 +23,9 @@ function CreateAccount() {
         .then(json => console.log("did it!", json));
         setUsername('')
         setPassword('');
+        navigate('/login');
     }
+
 
     return (
         <div>
@@ -47,6 +51,7 @@ function CreateAccount() {
                 >Create Account
                 </button>
             </form>
+            <p>Already have an account? Login here!</p>
         </div>
     );
 }

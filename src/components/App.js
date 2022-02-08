@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Vocab from "./Vocab";
 import CreateAccount from "./CreateAccount";
@@ -10,14 +10,14 @@ import NavBar from "./NavBar";
 function App() {
   return (
     <div>
-      <h1>Language App</h1>
+      <h1>iDioma</h1>
       <NavBar />
       <Routes>
+        <Route path="/createaccount" element={<CreateAccount />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />}/>
         <Route path="/vocab" element={<Vocab />} />
         <Route path="/notes" element={<Notes />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/createaccount" element={<CreateAccount />} />
-        <Route path="/" element={<Home />}/>
       </Routes>
       </div>
   );

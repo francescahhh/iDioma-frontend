@@ -1,7 +1,10 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
+
   let activeStyle = {
     textDecoration: "underline"
   };
@@ -18,7 +21,7 @@ function NavBar() {
               isActive ? activeStyle : undefined
             }
           >
-            Create Account
+            Create Account 
           </NavLink>
         </li>
       <li>
@@ -28,7 +31,18 @@ function NavBar() {
               isActive ? activeStyle : undefined
             }
           >
-            Login
+            Login 
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/"
+          >
+            {({ isActive }) => (
+              <span className={isActive ? activeClassName : undefined}>
+                Home 
+              </span>
+            )}
           </NavLink>
         </li>
         <li>
@@ -38,7 +52,7 @@ function NavBar() {
               isActive ? activeStyle : undefined
             }
           >
-            Vocab
+            Vocab 
           </NavLink>
         </li>
         <li>
@@ -48,20 +62,17 @@ function NavBar() {
               isActive ? activeClassName : undefined
             }
           >
-            Notes
+            Notes 
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/"
-          >
-            {({ isActive }) => (
-              <span className={isActive ? activeClassName : undefined}>
-                Home
-              </span>
-            )}
-          </NavLink>
-        </li>
+        <button
+          onClick={() => {
+            localStorage.setItem('jwt', '');
+            navigate('/login');
+          }}
+        >
+          Logout
+        </button>
       </ul>
     </nav>
   );
