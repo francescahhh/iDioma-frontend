@@ -1,8 +1,8 @@
-# [insert name of app here] Frontend README
+# iDioma Frontend README
 
 # Project Summary:
 
-[insert app name here] is a study tool app designed to provide a place for users to store vocabulary words and notes while learning a foreign language. [app name] allows users to add vocabulary words and definitions to a Ruby on Rails backend and view all the words they have added on a React frontend. Additionally, there is a notes feature that allows users to create, edit, and delete notes on things such as grammar rules and pronunciation. 
+iDioma is a study tool app designed to provide a place for users to store vocabulary words and notes while learning a foreign language. [app name] allows users to add vocabulary words and definitions to a Ruby on Rails backend and view all the words they have added on a React frontend. Additionally, there is a notes feature that allows users to create, edit, and delete notes on things such as grammar rules and pronunciation. 
 
 # User Stories:
 

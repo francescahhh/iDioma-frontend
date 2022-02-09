@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function NoteCard() {
+const API = 'http://localhost:3000'
+
+const NoteCard = () => {
+    const [noteData, setNoteData] = useState([]);
+
+    const getNoteData = () => {
+        fetch(`${API}/notes`)
+       .then(res => {
+           return res.json()
+       })
+       .then(data => {
+           setNoteData(data)
+       })
+    }
+
+    useEffect(() => {
+        getNoteData();
+    }, []);
+
     return (
-      <div>
-        <h2>note here</h2>
-        <h3>category here</h3>
-      </div>
-    );
+        <div>
+          {noteData.map((note, n) => {
+            return <p key={n}>{note.content}</p>
+          })}
+        </div>
+    )
   }
-
-  export default NoteCard;
+    
+    export default NoteCard;

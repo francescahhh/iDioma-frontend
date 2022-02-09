@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function VocabCard() {
+const API = 'http://localhost:3000'
+
+const VocabCard = () => {
+    const [wordData, setWordData] = useState([]);
+
+    const getWordData = () => {
+        fetch(`${API}/words`)
+       .then(res => {
+           return res.json()
+       })
+       .then(data => {
+           setWordData(data)
+       })
+    }
+
+    useEffect(() => {
+        getWordData();
+    }, []);
+
     return (
-      <div>
-        <h2>word here</h2>
-        <h3>definition here</h3>
-        <h3>source here</h3>
-      </div>
-    );
-  }
-
-  export default VocabCard;
+          <span>
+            {wordData.map((word, w) => {
+              return <p key={w}> word: {word.word} | definition: {word.definition} | source: {word.source}</p>
+            })}
+          </span>
+      )
+    }
+    
+    export default VocabCard;

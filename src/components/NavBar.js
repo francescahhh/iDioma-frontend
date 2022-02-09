@@ -14,24 +14,24 @@ function NavBar() {
   return (
     <nav>
       <ul>
-      <li>
+        <li>
           <NavLink
             to="createaccount"
             style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
           >
-            Create Account 
+            Create Account
           </NavLink>
         </li>
-      <li>
+        <li>
           <NavLink
             to="login"
             style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
           >
-            Login 
+            Login
           </NavLink>
         </li>
         <li>
@@ -40,7 +40,7 @@ function NavBar() {
           >
             {({ isActive }) => (
               <span className={isActive ? activeClassName : undefined}>
-                Home 
+                Home
               </span>
             )}
           </NavLink>
@@ -52,7 +52,7 @@ function NavBar() {
               isActive ? activeStyle : undefined
             }
           >
-            Vocab 
+            Vocab
           </NavLink>
         </li>
         <li>
@@ -62,7 +62,7 @@ function NavBar() {
               isActive ? activeClassName : undefined
             }
           >
-            Notes 
+            Notes
           </NavLink>
         </li>
         <button

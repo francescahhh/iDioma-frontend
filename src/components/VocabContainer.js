@@ -8,7 +8,7 @@ export default function VocabContainer() {
   const [words, setWords] = useState([])
 
   useEffect(() => {
-      fetch(`${API}/words`) 
+    fetch(`${API}/words`)
       .then(res => res.json())
       .then(data => setWords(data))
   }, []);
@@ -17,14 +17,12 @@ export default function VocabContainer() {
     setWords([...words, newWord]);
   }
 
-    return (
-      <div>
-        <h1>Vocab Page</h1>
-        <VocabForm onAddWord={handleAddWord} />
-        <VocabCard />
-        <VocabCard />
-        <VocabCard />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Vocab Page</h1>
+      <VocabForm onAddWord={handleAddWord} />
+      <VocabCard />
+    </div>
+  );
+}
 

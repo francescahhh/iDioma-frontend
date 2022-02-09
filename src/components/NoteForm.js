@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 
-function NoteForm( { onAddNote } ) {
-    const [formData, setFormData ] = useState({
-        content: "",    
+const API = 'http://localhost:3000'
+
+function NoteForm({ onAddNote }) {
+    const [formData, setFormData] = useState({
+        content: "",
     })
 
     function handleChange(e) {
@@ -16,9 +18,10 @@ function NoteForm( { onAddNote } ) {
         e.preventDefault()
 
         const newNote = {
-            ...formData }
+            ...formData
+        }
 
-        fetch("http://localhost:3000/notes", {
+        fetch(`${API}/notes`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -34,19 +37,19 @@ function NoteForm( { onAddNote } ) {
             })
     }
 
-  return (
-    <form onSubmit={handleSubmit} className="Submission-form">
-      <label>New Note: </label>
-        <input
-          type="text" 
-          name="content"
-          onChange={handleChange}
-          value={formData.content}
-          placeholder="Write a new note here..."
-        />
-      <button type="submit" >Add Note</button>
-    </form>
-  )
+    return (
+        <form onSubmit={handleSubmit} className="Submission-form">
+            <label>Submit a new note: </label>
+            <input
+                type="text"
+                name="content"
+                onChange={handleChange}
+                value={formData.content}
+                placeholder="Write a new note here..."
+            />
+            <button type="submit" >Add Note</button>
+        </form>
+    )
 }
 
 export default NoteForm;

@@ -17,10 +17,10 @@ function CreateAccount() {
                 Accepts: 'application/json',
                 'Content-type': 'application/json',
             },
-            body: JSON.stringify( { user: {username, password} } )
+            body: JSON.stringify({ user: { username, password } })
         })
-        .then((res) => res.json())
-        .then(json => console.log("did it!", json));
+            .then((res) => res.json())
+            .then(json => console.log("did it!", json));
         setUsername('')
         setPassword('');
         navigate('/login');
@@ -32,22 +32,22 @@ function CreateAccount() {
             <h1>Create Account</h1>
             <form onSubmit={submitNewAccount}>
                 <div>
-                    <input 
-                    type="text" 
-                    value={username} 
-                    onChange={e => setUsername(e.target.value)} name="username" 
-                    placeholder="Username" 
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={e => setUsername(e.target.value)} name="username"
+                        placeholder="Username"
                     />
                 </div>
                 <div>
-                    <input 
-                    type="password" 
-                    value={password} 
-                    onChange={e => setPassword(e.target.value)} name="password" 
-                    placeholder="Password"
-                     />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)} name="password"
+                        placeholder="Password"
+                    />
                 </div>
-                <button type="submit" 
+                <button type="submit"
                 >Create Account
                 </button>
             </form>
