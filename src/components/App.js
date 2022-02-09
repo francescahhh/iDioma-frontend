@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState, useEffect }from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
-import Vocab from "./Vocab";
+import VocabContainer from "./VocabContainer";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
-import Notes from "./Notes";
+import NotesContainer from "./NotesContainer";
 import NavBar from "./NavBar";
 
-function App() {
+const API = 'http://localhost:3000'
+
+export default function App() {
+  const [user, setUser] = useState()
+  
   return (
     <div>
       <h1>iDioma</h1>
@@ -16,11 +20,10 @@ function App() {
         <Route path="/createaccount" element={<CreateAccount />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />}/>
-        <Route path="/vocab" element={<Vocab />} />
-        <Route path="/notes" element={<Notes />} />
+        <Route path="/vocab" element={<VocabContainer />} />
+        <Route path="/notes" element={<NotesContainer />} />
       </Routes>
       </div>
   );
 }
 
-export default App;

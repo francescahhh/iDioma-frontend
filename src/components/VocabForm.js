@@ -1,41 +1,68 @@
-import React from "react"
-import { useState } from "react";
+import React, { useState } from "react";
 
-function VocabForm() {
-  const [word, setWord] = useState("");
-  const [definition, setDefinition] = useState("");
-  const [source, setSource] = useState("");
-  const [category, setCategory] = useState("");
+function VocabForm( { onAddWord } ) {
+    const [formData, setFormData ] = useState({
+        word: "",
+        definition: "",
+        source: "",
+    })
 
+    function handleChange(e) {
+        setFormData({
+            ...formData, 
+            [e.target.name]: e.target.value,   
+        })
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        const newWord = {
+            ...formData }
+
+        fetch("http://localhost:3000/words", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newWord),
+        })
+            .then((res) => res.json())
+            .then((newWord) => {
+                setFormData({
+                    word: "",
+                    definition: "",
+                    source: "",
+                })
+                onAddWord(newWord)
+            })
+        }
+    
   return (
-    <form className="Submission-form">
+    <form onSubmit={handleSubmit} className="Submission-form">
       <label>Submit a new vocabulary word: </label>
         <input
           type="text" 
-          value={word}
+          name="word"
+          onChange={handleChange}
+          value={formData.word}
           placeholder="Word"
-          onChange={(e) => setWord(e.target.value)}
         />
      
       <input
         type="text"
-        value={definition}
+        name="definition"
+        onChange={handleChange}
+        value={formData.definition}
         placeholder="Definition"
-        onChange={(e) => setDefinition(e.target.value)}
       />
 
     <input
         type="text"
-        value={source}
+        name="source"
+        onChange={handleChange}
+        value={formData.source}
         placeholder="Where you encountered this word"
-        onChange={(e) => setSource(e.target.value)}
-    />
-
-    <input
-        type="text"
-        value={category}
-        placeholder="Category"
-        onChange={(e) => setCategory(e.target.value)}
     />
 
       <button type="submit" >Add Word</button>
