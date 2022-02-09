@@ -1,27 +1,49 @@
-import React from "react"
-import { useState } from "react";
+import React, { useState } from "react"
 
-function NoteForm() {
-  const [note, setNote] = useState("");
-  const [category, setCategory] = useState("");
+function NoteForm( { onAddNote } ) {
+    const [formData, setFormData ] = useState({
+        content: "",    
+    })
+
+    function handleChange(e) {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        const newNote = {
+            ...formData }
+
+        fetch("http://localhost:3000/notes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newNote),
+        })
+            .then((res) => res.json())
+            .then((newNote) => {
+                setFormData({
+                    content: "",
+                })
+                onAddNote(newNote)
+            })
+    }
 
   return (
-    <form className="Submission-form">
+    <form onSubmit={handleSubmit} className="Submission-form">
       <label>New Note: </label>
         <input
           type="text" 
-          value={note}
+          name="content"
+          onChange={handleChange}
+          value={formData.content}
           placeholder="Write a new note here..."
-          onChange={(e) => setNote(e.target.value)}
         />
-
-    <input
-        type="text"
-        value={category}
-        placeholder="Category"
-        onChange={(e) => setCategory(e.target.value)}
-    />
-
       <button type="submit" >Add Note</button>
     </form>
   )

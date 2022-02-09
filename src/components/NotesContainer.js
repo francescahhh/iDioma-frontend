@@ -1,15 +1,28 @@
 import React from "react";
+import { useState, useEffect } from "react/cjs/react.development";
 import NoteCard from "./NoteCard";
 import NoteForm from "./NoteForm";
 
-function Notes() {
+const API = 'http://localhost:3000'
+
+export default function NotesContainer() {
+    const [notes, setNotes] = useState([])
+
+    useEffect(() => {
+      fetch(`${API}/notes`)
+      .then(res => res.json())
+      .then(data => setNotes(data))
+    }, []);
+
+    function handleAddNote(newNote) {
+      setNotes([...notes, newNote]);
+    }
+
     return (
       <div>
         <h1>Notes Page</h1>
-        <NoteForm />
+        <NoteForm onAddNote={handleAddNote} />
         <NoteCard />
       </div>
     );
   }
-
-  export default Notes;

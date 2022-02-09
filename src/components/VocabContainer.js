@@ -20,7 +20,6 @@ export default function VocabContainer() {
     return (
       <div>
         <h1>Vocab Page</h1>
-        <VocabCard words={words} />
         <VocabForm onAddWord={handleAddWord} />
         <VocabCard />
         <VocabCard />
