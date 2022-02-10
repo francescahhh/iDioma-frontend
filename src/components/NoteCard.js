@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const API = 'http://localhost:3000'
 
-const NoteCard = () => {
+function NoteCard() {
     const [noteData, setNoteData] = useState([]);
+
 
     const getNoteData = () => {
         fetch(`${API}/notes`)
@@ -22,7 +23,7 @@ const NoteCard = () => {
     return (
         <div>
           {noteData.map((note, n) => {
-            return <p key={n}>{note.content}</p>
+            return <p className="note-card" key={n}>{note.content}</p>
           })}
         </div>
     )

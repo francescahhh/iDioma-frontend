@@ -22,7 +22,7 @@ const VocabCard = () => {
     return (
           <span>
             {wordData.map((word, w) => {
-              return <p key={w}> word: {word.word} | definition: {word.definition} | source: {word.source}</p>
+              return <p className="vocab-card" key={w}> <strong>Word:</strong> {word.word} <br></br> <strong>Definition:</strong> {word.definition} <br></br> <strong>Source:</strong> {word.source}</p>
             })}
           </span>
       )

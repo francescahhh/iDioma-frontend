@@ -13,8 +13,8 @@ export default function App() {
   const [user, setUser] = useState()
 
   return (
-    <div>
-      <h1>iDioma</h1>
+    <div id="App">
+      <img id ="logo" src="https://res.cloudinary.com/dqms0calh/image/upload/v1644519787/Screen_Shot_2022-02-10_at_11.58.28_AM_xrsw2g.png" alt="iDioma" />
       <NavBar />
       <Routes>
         <Route path="/createaccount" element={<CreateAccount />} />

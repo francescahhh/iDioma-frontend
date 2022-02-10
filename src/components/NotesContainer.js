@@ -19,7 +19,7 @@ export default function NotesContainer() {
 
   return (
     <div>
-      <h1>Notes Page</h1>
+      <h1>Notes</h1>
       <NoteForm onAddNote={handleAddNote} />
       <NoteCard />
     </div>

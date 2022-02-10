@@ -19,7 +19,7 @@ export default function VocabContainer() {
 
   return (
     <div>
-      <h1>Vocab Page</h1>
+      <h1>Vocab</h1>
       <VocabForm onAddWord={handleAddWord} />
       <VocabCard />
     </div>

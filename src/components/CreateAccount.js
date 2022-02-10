@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import Footer from "./Footer";
 
 const API = 'http://localhost:3000/api/v1'
 
@@ -29,8 +30,9 @@ function CreateAccount() {
 
     return (
         <div>
+        <div id="create-account-page">
             <h1>Create Account</h1>
-            <form onSubmit={submitNewAccount}>
+            <form className="user-forms" onSubmit={submitNewAccount}>
                 <div>
                     <input
                         type="text"
@@ -52,6 +54,8 @@ function CreateAccount() {
                 </button>
             </form>
             <p>Already have an account? Login here!</p>
+            </div>
+            <Footer />
         </div>
     );
 }

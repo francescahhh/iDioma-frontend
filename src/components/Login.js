@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import Footer from "./Footer";
 
 const API = 'http://localhost:3000/api/v1'
 
@@ -34,8 +35,9 @@ function Login() {
 
   return (
     <div>
-      <h1>Login</h1>
-      <form onSubmit={submitLogin}>
+      <div id="login-page">
+      <h1 id="login-header">Login</h1>
+      <form className="user-forms" onSubmit={submitLogin}>
         <div>{' '}
           <input
             type="text"
@@ -54,6 +56,8 @@ function Login() {
         <button type="submit">Login</button>
       </form>
       <p>Don't have an account? Sign up here!</p>
+    </div>
+    <Footer />
     </div>
   );
 }
