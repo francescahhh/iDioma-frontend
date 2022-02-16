@@ -14,8 +14,8 @@ function NoteForm({ onAddNote }) {
         })
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
+    function handleSubmit() {
+        // e.preventDefault() ----> and add e in parentheses if you want to prevent the page from auto refreshing after submit 
 
         const newNote = {
             ...formData

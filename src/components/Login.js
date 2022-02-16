@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import React from "react";
 import Footer from "./Footer";
+
 
 const API = 'http://localhost:3000/api/v1'
 
@@ -55,7 +57,8 @@ function Login() {
         </div>
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? Sign up here!</p>
+      <p>Don't have an account? <Link to='/createaccount'>Sign up here!</Link>
+      </p>
     </div>
     <Footer />
     </div>

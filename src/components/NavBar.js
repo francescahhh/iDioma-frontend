@@ -11,6 +11,8 @@ function NavBar() {
 
   let activeClassName = "underline"
 
+//potentially remove the login and create account nav links
+
   return (
     <nav>
       <ul>

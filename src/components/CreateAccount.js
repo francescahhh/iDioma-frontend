@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import Footer from "./Footer";
 
@@ -53,7 +53,8 @@ function CreateAccount() {
                 >Create Account
                 </button>
             </form>
-            <p>Already have an account? Login here!</p>
+            <p>Already have an account? <Link to='/login'>Login here!</Link>
+            </p>
             </div>
             <Footer />
         </div>

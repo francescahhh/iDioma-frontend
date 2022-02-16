@@ -16,8 +16,8 @@ function VocabForm({ onAddWord }) {
         })
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
+    function handleSubmit() {
+        // e.preventDefault() ----> and add e in parentheses if you want to prevent the page from auto refreshing after submit 
 
         const newWord = {
             ...formData
@@ -65,7 +65,7 @@ function VocabForm({ onAddWord }) {
                 name="source"
                 onChange={handleChange}
                 value={formData.source}
-                placeholder="Where you encountered this word"
+                placeholder="Source"
             />
 
             <button type="submit" >Add Word</button>

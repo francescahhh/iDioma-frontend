@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import VocabContainer from "./VocabContainer";
@@ -7,10 +8,10 @@ import Login from "./Login";
 import NotesContainer from "./NotesContainer";
 import NavBar from "./NavBar";
 
-const API = 'http://localhost:3000'
+// const API = 'http://localhost:3000'
 
 export default function App() {
-  const [user, setUser] = useState()
+  // const [user, setUser] = useState()
 
   return (
     <div id="App">

@@ -499,3 +499,8 @@ p {
 label {
   color: #9A8C98;
 }
+
+.card-buttons {
+  margin-left: 5px;
+  margin-right: 5px;  
+}
