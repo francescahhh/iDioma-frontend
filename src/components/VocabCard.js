@@ -5,31 +5,22 @@ const API = 'http://localhost:3000'
 const VocabCard = () => {
     const [wordData, setWordData] = useState([]);
 
-    const getWordData = () => {
-        fetch(`${API}/words`)
-       .then(res => {
-           return res.json()
-       })
-       .then(data => {
-           setWordData(data)
-       })
-    }
-
     useEffect(() => {
-        getWordData();
-    }, []);
+        fetch(`${API}/words`)
+          .then(res => res.json())
+          .then(setWordData)}, []);
 
-    //maybe need to move gets and deletes to different components???? --add edits to the same as deletes???
 
     function handleDeleteClick(id) {
         fetch(`${API}/words/${id}`, {
          method: "DELETE",
-     }).then((r) => {
-         if (r.ok) {
-             wordData.filter((word) => word.id !== id)
+        })
+        .then((res) => {
+         if (res.ok) {
+             setWordData(wordData.filter((word) => word.id !== id))
          }
-     }); }
-
+    });
+}
 
     return (
           <span>

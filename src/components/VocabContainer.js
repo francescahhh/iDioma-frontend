@@ -17,6 +17,7 @@ export default function VocabContainer() {
     setWords([...words, newWord]);
   }
 
+
   return (
     <div>
       <h1>Vocab</h1>
