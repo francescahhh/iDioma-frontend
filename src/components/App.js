@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <div id="App">
-      <img id ="logo" src="https://res.cloudinary.com/dqms0calh/image/upload/v1644519787/Screen_Shot_2022-02-10_at_11.58.28_AM_xrsw2g.png" alt="iDioma" />
+      <img id ="logo" src="/images/idioma.png" alt="iDioma" />
       <NavBar />
       <Routes>
         <Route path="/createaccount" element={<CreateAccount />} />

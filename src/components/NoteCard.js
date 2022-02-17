@@ -23,7 +23,7 @@ function NoteCard() {
     return (
         <div>
             <ul className="cards">
-          {noteData.map((note) => ( <li className="note-card" key={note.id}>{note.content}
+          {noteData.map((note) => ( <li className="note-card" key={note.id}>{note.content}<br></br>
             <button type="submit" className="card-buttons" onClick={() => handleDeleteClick(note.id)}>Delete</button>
             <button className="card-buttons">Edit</button>
           </li>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import Footer from "./Footer";
+import background from "./background3.jpg";
 
 const API = 'http://localhost:3000/api/v1'
 
@@ -30,7 +31,7 @@ function CreateAccount() {
 
     return (
         <div>
-        <div id="create-account-page">
+        <div id="create-account-page"  style={{ backgroundImage: `url(${background})`}}>
             <h1>Create Account</h1>
             <form className="user-forms" onSubmit={submitNewAccount}>
                 <div>

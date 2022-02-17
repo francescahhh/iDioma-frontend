@@ -9,17 +9,48 @@
 }
 
 #login-page {
-  background-image: url(https://res.cloudinary.com/dqms0calh/image/upload/o_47/v1644515962/pexels-olya-kobruseva-5408919_pbv3d4.jpg);
+  /* background-image: url(images/pexels-olya-kobruseva-5408919_pbv3d4.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   padding: 15%;
+  border-radius: 30px;
 }
 
 #create-account-page {
-  background-image: url(https://res.cloudinary.com/dqms0calh/image/upload/o_47/v1644515962/pexels-olya-kobruseva-5408919_pbv3d4.jpg);
+  /* background-image: url(https://res.cloudinary.com/dqms0calh/image/upload/o_47/v1644515962/pexels-olya-kobruseva-5408919_pbv3d4.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   padding: 15%;
+  border-radius: 30px;
+} 
+
+#home-page {
+  /* background-image: url(https://res.cloudinary.com/dqms0calh/image/upload/o_47/v1644515962/pexels-olya-kobruseva-5408919_pbv3d4.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 25%;
+  border-radius: 30px;
+}
+
+.fade-in-text {
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #676777;
+  animation: fadeIn linear 3s;
+  -webkit-animation: fadeIn linear 3s;
+  -moz-animation: fadeIn linear 3s;
+  -o-animation: fadeIn linear 3s;
+  -ms-animation: fadeIn linear 3s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 #logo {
@@ -30,6 +61,7 @@
   height: auto;
   opacity: .8;
   padding-bottom: 10px;
+  border-radius: 30px;
 }
 
 #photo-credit-footer {
@@ -194,7 +226,7 @@ p {
 /* Links
 â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
 a {
-  color: #4A4E69; }
+  color: #676777; }
 a:hover {
   color: #9A8C98; }
 
@@ -480,12 +512,14 @@ there.
 }
 
 h1{
-  color: #4A4E69;
+  color: #676777
+  ;
   letter-spacing: 4px;
 }
 
 h2 {
-  color: #4A4E69;
+  color: #676777
+  ;
 }
 
 h3 {
@@ -493,7 +527,8 @@ h3 {
 }
 
 p {
-  color: #4A4E69;
+  color: #676777
+  ;
 }
 
 label {
@@ -503,4 +538,8 @@ label {
 .card-buttons {
   margin-left: 5px;
   margin-right: 5px;  
+}
+
+li {
+  color: #676777;
 }

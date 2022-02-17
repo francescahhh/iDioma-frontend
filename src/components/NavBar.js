@@ -11,12 +11,11 @@ function NavBar() {
 
   let activeClassName = "underline"
 
-//potentially remove the login and create account nav links
 
   return (
     <nav>
       <ul>
-        <li>
+        {/* <li>
           <NavLink
             to="createaccount"
             style={({ isActive }) =>
@@ -35,7 +34,7 @@ function NavBar() {
           >
             Login
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink
             to="/"

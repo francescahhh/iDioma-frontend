@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import React from "react";
 import Footer from "./Footer";
-
+import background from "./background3.jpg";
 
 const API = 'http://localhost:3000/api/v1'
 
@@ -32,12 +31,12 @@ function Login() {
 
     setLoginUsername('')
     setLoginPassword('')
-    navigate('/vocab');
+    navigate('/');
   }
 
   return (
     <div>
-      <div id="login-page">
+      <div id="login-page" style={{ backgroundImage: `url(${background})`}}>
       <h1 id="login-header">Login</h1>
       <form className="user-forms" onSubmit={submitLogin}>
         <div>{' '}
