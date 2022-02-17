@@ -36,11 +36,11 @@
   display: inline-block;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #676777;
-  animation: fadeIn linear 3s;
-  -webkit-animation: fadeIn linear 3s;
-  -moz-animation: fadeIn linear 3s;
-  -o-animation: fadeIn linear 3s;
-  -ms-animation: fadeIn linear 3s;
+  animation: fadeIn linear 2s;
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
 }
 
 @keyframes fadeIn {
@@ -487,6 +487,27 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
+.note-card, .vocab-card {
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #676777;
+  animation: fadeIn linear .5s;
+  -webkit-animation: fadeIn linear .5s;
+  -moz-animation: fadeIn linear .5s;
+  -o-animation: fadeIn linear .5s;
+  -ms-animation: fadeIn linear .5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .vocab-card {
   padding: 20px;
   border-style: dashed;
@@ -512,14 +533,15 @@ there.
 }
 
 h1{
-  color: #676777
-  ;
+  color: #676777;
   letter-spacing: 4px;
 }
 
 h2 {
-  color: #676777
-  ;
+  color: #676777;
+  letter-spacing: 4px;
+  font-weight: lighter;
+  text-decoration: underline;
 }
 
 h3 {
