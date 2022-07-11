@@ -16,7 +16,7 @@ function NoteCard() {
     }).then((res) => {
         if (res.ok) {
             setNoteData(noteData.filter((note) => note.id !== id))
-        }
+      }
     }); 
 }
 
@@ -32,5 +32,5 @@ function NoteCard() {
         </div>
     )
   }
-    
-    export default NoteCard;
+
+  export default NoteCard;

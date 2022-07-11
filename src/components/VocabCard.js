@@ -31,7 +31,7 @@ const VocabCard = () => {
             <strong>Source:</strong> {word.source}
             <br></br>
             <button type="submit" className="card-buttons" onClick={() => handleDeleteClick(word.id)}>Delete</button>
-            <button className="card-buttons">Edit</button>
+            {/* <button className="card-buttons">Edit</button> */}
             </p>
             })}
           </span>

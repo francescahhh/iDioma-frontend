@@ -5,13 +5,13 @@ const API = 'http://localhost:3000'
 function NoteForm({ onAddNote }) {
     const [formData, setFormData] = useState({
         content: "",
-    })
+    });
 
     function handleChange(e) {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
-        })
+        });
     }
 
     function handleSubmit() {

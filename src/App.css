@@ -67,6 +67,85 @@
 #photo-credit-footer {
   align-items: center;
 }
+.note-card, .vocab-card {
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #676777;
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.vocab-card {
+  padding: 20px;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #4A4E69;
+  display:inline-block;
+  margin-right: 10px;
+  background-color: #C9ADA7;
+  border-radius: 4px;
+  font-size: larger;
+}
+
+.note-card {
+  padding: 20px;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #4A4E69;
+  display:inline-block;
+  margin-right: 10px;
+  background-color: #C9ADA7;
+  border-radius: 4px;
+  font-size: larger;
+}
+
+h1{
+  color: #676777;
+  letter-spacing: 4px;
+}
+
+h2 {
+  color: #676777;
+  letter-spacing: 4px;
+  font-weight: lighter;
+  text-decoration: underline;
+}
+
+h3 {
+  color: #9A8C98;
+}
+
+p {
+  color: #676777
+  ;
+}
+
+label {
+  color: #9A8C98;
+}
+
+.card-buttons {
+  margin-left: 5px;
+  margin-right: 5px;  
+}
+
+li {
+  color: #676777;
+}
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
@@ -471,7 +550,6 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
-
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
@@ -487,81 +565,3 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
-.note-card, .vocab-card {
-  display: inline-block;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #676777;
-  animation: fadeIn linear .5s;
-  -webkit-animation: fadeIn linear .5s;
-  -moz-animation: fadeIn linear .5s;
-  -o-animation: fadeIn linear .5s;
-  -ms-animation: fadeIn linear .5s;
-}
-
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-.vocab-card {
-  padding: 20px;
-  border-style: dashed;
-  border-width: 2px;
-  border-color: #4A4E69;
-  display:inline-block;
-  margin-right: 10px;
-  background-color: #C9ADA7;
-  border-radius: 4px;
-  font-size: larger;
-}
-
-.note-card {
-  padding: 20px;
-  border-style: dashed;
-  border-width: 2px;
-  border-color: #4A4E69;
-  display:inline-block;
-  margin-right: 10px;
-  background-color: #C9ADA7;
-  border-radius: 4px;
-  font-size: larger;
-}
-
-h1{
-  color: #676777;
-  letter-spacing: 4px;
-}
-
-h2 {
-  color: #676777;
-  letter-spacing: 4px;
-  font-weight: lighter;
-  text-decoration: underline;
-}
-
-h3 {
-  color: #9A8C98;
-}
-
-p {
-  color: #676777
-  ;
-}
-
-label {
-  color: #9A8C98;
-}
-
-.card-buttons {
-  margin-left: 5px;
-  margin-right: 5px;  
-}
-
-li {
-  color: #676777;
-}
