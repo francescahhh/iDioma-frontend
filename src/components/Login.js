@@ -11,6 +11,12 @@ function Login() {
   const [loginUsername, setLoginUsername] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
 
+  ////////////////
+  //this is just to test out the auth
+  const [loggedInUsername, setLoggedInUsername] = useState('')
+  //^^^^^^^^
+
+
   function submitLogin(e) {
     e.preventDefault();
 
@@ -31,8 +37,27 @@ function Login() {
 
     setLoginUsername('')
     setLoginPassword('')
-    navigate('/');
+    navigate('/login'); //change back to / after auth is tested/////////
   }
+
+//just here to test the auth/////////
+  function getProfile() {
+    fetch(`${API}/profile`, {
+      method: 'GET',
+      headers: { 
+        Accepts: 'application/json',
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+    }
+    })
+    .then((res) => res.json())
+    .then(json => {
+      console.log('got profile', json);
+    setLoggedInUsername(json.username);
+    })
+  }
+//^^^^^/////////////////
+
 
   return (
     <div>
@@ -58,6 +83,14 @@ function Login() {
       </form>
       <p>Don't have an account? <Link to='/createaccount'>Sign up here!</Link>
       </p>
+
+{/* /////just here to test out the auth////// */}
+{loggedInUsername !== undefined ?
+      <button onClick={getProfile}>Get Profile</button> :
+      <div>Username: {loggedInUsername}</div>
+}
+{/*  ^^^^^^/////////////*/}
+
     </div>
     <Footer />
     </div>
