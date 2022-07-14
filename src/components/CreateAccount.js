@@ -12,14 +12,14 @@ function CreateAccount() {
     const [password, setPassword] = useState('')
 
     function submitNewAccount(e) {
-        e.preventDefault()
+        e.preventDefault();
         fetch(`${API}/users`, {
             method: 'POST',
             headers: {
                 Accepts: 'application/json',
                 'Content-type': 'application/json',
             },
-            body: JSON.stringify({ user: { username, password } })
+            body: JSON.stringify({ user: { username, password } }),
         })
             .then((res) => res.json())
             .then(json => console.log("did it!", json));
@@ -27,7 +27,6 @@ function CreateAccount() {
         setPassword('');
         navigate('/login');
     }
-
 
     return (
         <div>
