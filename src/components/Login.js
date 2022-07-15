@@ -85,7 +85,7 @@ function Login() {
       </p>
 
 {/* /////just here to test out the auth////// */}
-{loggedInUsername !== undefined ?
+{!loggedInUsername ?
       <button onClick={getProfile}>Get Profile</button> :
       <div>Username: {loggedInUsername}</div>
 }
