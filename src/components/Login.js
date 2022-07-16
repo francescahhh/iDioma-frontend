@@ -56,6 +56,10 @@ function Login() {
     setLoggedInUsername(json.username);
     })
   }
+
+  function resetProfile() {
+    setLoggedInUsername();
+  }
 //^^^^^/////////////////
 
 
@@ -84,12 +88,18 @@ function Login() {
       <p>Don't have an account? <Link to='/createaccount'>Sign up here!</Link>
       </p>
 
+
 {/* /////just here to test out the auth////// */}
-{!loggedInUsername ?
-      <button onClick={getProfile}>Get Profile</button> :
+{!loggedInUsername ? (
+      <button onClick={getProfile}>Get Profile</button> 
+  ) : (
+  <>
       <div>Username: {loggedInUsername}</div>
-}
+      <button onClick={resetProfile}>Reset</button> 
+  </>
+)}
 {/*  ^^^^^^/////////////*/}
+
 
     </div>
     <Footer />
