@@ -1,32 +1,45 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import Footer from "./Footer";
 import background from "./background3.jpg";
+import useFetchApi from "../lib/useFetchApi";
+import useUserState from "../lib/useUserState";
 
-const API = 'http://localhost:3000/api/v1'
+// const API = 'http://localhost:3000/api/v1'
 
 function CreateAccount() {
     const navigate = useNavigate();
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const registerAPI = useFetchApi('/users', onRegisteredAccount, 'POST');
+    // const [username, setUsername] = useState('')
+    // const [password, setPassword] = useState('')
+
+    function onRegisteredAccount(data) {
+        console.log('REGISTERED', data);
+    }
 
     function submitNewAccount(e) {
         e.preventDefault();
-        fetch(`${API}/users`, {
-            method: 'POST',
-            headers: {
-                Accepts: 'application/json',
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify({ user: { username, password } }),
-        })
-            .then((res) => res.json())
-            .then(json => console.log("did it!", json));
-        setUsername('')
-        setPassword('');
-        navigate('/login');
+        registerAPI({ user });
+        resetUser();
     }
+
+    // function submitNewAccount(e) {
+    //     e.preventDefault();
+    //     fetch(`${API}/users`, {
+    //         method: 'POST',
+    //         headers: {
+    //             Accepts: 'application/json',
+    //             'Content-type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ user: { username, password } }),
+    //     })
+    //         .then((res) => res.json())
+    //         .then(json => console.log("did it!", json));
+    //     setUsername('')
+    //     setPassword('');
+    //     navigate('/login');
+    // }
 
     return (
         <div>
