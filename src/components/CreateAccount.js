@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import Footer from "./Footer";
@@ -6,13 +5,10 @@ import background from "./background3.jpg";
 import useFetchApi from "../lib/useFetchApi";
 import useUserState from "../lib/useUserState";
 
-// const API = 'http://localhost:3000/api/v1'
-
 function CreateAccount() {
     const navigate = useNavigate();
     const registerAPI = useFetchApi('/users', onRegisteredAccount, 'POST');
-    // const [username, setUsername] = useState('')
-    // const [password, setPassword] = useState('')
+    const [user, updateUserState, resetUser] = useUserState();
 
     function onRegisteredAccount(data) {
         console.log('REGISTERED', data);
@@ -22,25 +18,9 @@ function CreateAccount() {
         e.preventDefault();
         registerAPI({ user });
         resetUser();
+        navigate('/login');
     }
-
-    // function submitNewAccount(e) {
-    //     e.preventDefault();
-    //     fetch(`${API}/users`, {
-    //         method: 'POST',
-    //         headers: {
-    //             Accepts: 'application/json',
-    //             'Content-type': 'application/json',
-    //         },
-    //         body: JSON.stringify({ user: { username, password } }),
-    //     })
-    //         .then((res) => res.json())
-    //         .then(json => console.log("did it!", json));
-    //     setUsername('')
-    //     setPassword('');
-    //     navigate('/login');
-    // }
-
+    
     return (
         <div>
         <div id="create-account-page"  style={{ backgroundImage: `url(${background})`}}>
@@ -49,17 +29,20 @@ function CreateAccount() {
                 <div>
                     <input
                         type="text"
-                        value={username}
-                        onChange={e => setUsername(e.target.value)} name="username"
+                        id="username"
                         placeholder="Username"
+                        name="username"
+                        value={user.username}
+                        onChange={updateUserState}
                     />
                 </div>
                 <div>
                     <input
                         type="password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)} name="password"
                         placeholder="Password"
+                        name="password"
+                        value={user.password} 
+                        onChange={updateUserState}
                     />
                 </div>
                 <button type="submit"
