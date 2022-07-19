@@ -1,67 +1,54 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import Footer from "./Footer";
 import background from "./background3.jpg";
-
-const API = 'http://localhost:3000/api/v1'
+import useFetchApi from "../lib/useFetchApi";
+import useUserState from "../lib/useUserState";
 
 function Login() {
   const navigate = useNavigate();
-  const [loginUsername, setLoginUsername] = useState('')
-  const [loginPassword, setLoginPassword] = useState('')
+  const [user, updateUserState, resetUser] = useUserState();
+  const loginApi = useFetchApi('/login', onLoggedIn, 'POST');
+
 
   ////////////////
   //this is just to test out the auth
-  const [loggedInUsername, setLoggedInUsername] = useState('')
+  // const [loggedInUsername, setLoggedInUsername] = useState('')
   //^^^^^^^^
-
 
   function submitLogin(e) {
     e.preventDefault();
-
-    const loginData = {
-      user: { username: loginUsername, password: loginPassword },
-    };
-
-    fetch(`${API}/login`, {
-      method: 'POST',
-      headers: {
-        Accepts: 'application/json',
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(loginData),
-    })
-      .then((res) => res.json())
-      .then((json) => localStorage.setItem('jwt', json.jwt));
-
-    setLoginUsername('')
-    setLoginPassword('')
-    navigate('/login'); //change back to / after auth is tested/////////
+    loginApi({ user: { username: user.username, password: user.password }});
+    resetUser({});
+    navigate('/'); 
   }
 
 //just here to test the auth/////////
-  function getProfile() {
-    fetch(`${API}/profile`, {
-      method: 'GET',
-      headers: { 
-        Accepts: 'application/json',
-      'Content-type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('jwt')}`
-    }
-    })
-    .then((res) => res.json())
-    .then(json => {
-      console.log('got profile', json);
-    setLoggedInUsername(json.username);
-    })
-  }
+//   function getProfile() {
+//     fetch(`${API}/profile`, {
+//       method: 'GET',
+//       headers: { 
+//         Accepts: 'application/json',
+//       'Content-type': 'application/json',
+//       'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+//     }
+//     })
+//     .then((res) => res.json())
+//     .then(json => {
+//       console.log('got profile', json);
+//     setLoggedInUsername(json.username);
+//     })
+//   }
 
-  function resetProfile() {
-    setLoggedInUsername();
-  }
-//^^^^^/////////////////
+//   function resetProfile() {
+//     setLoggedInUsername();
+//   }
+// //^^^^^/////////////////
 
+function onLoggedIn(json) {
+  console.log('LOGGED IN:', json.jwt);
+  localStorage.setItem('jwt', json.jwt);
+}
 
   return (
     <div>
@@ -71,16 +58,21 @@ function Login() {
         <div>{' '}
           <input
             type="text"
+            id="username"
             placeholder="Username"
-            value={loginUsername}
-            onChange={(e) => setLoginUsername(e.target.value)} />
+            name="username"
+            value={user.username}
+            onChange={updateUserState}
+            />
         </div>
         <div>{' '}
           <input
             type="password"
+            id="password"
             placeholder="Password"
-            value={loginPassword}
-            onChange={(e) => setLoginPassword(e.target.value)}
+            name="password"
+            value={user.password}
+            onChange={updateUserState}
           />
         </div>
         <button type="submit">Login</button>
@@ -90,14 +82,14 @@ function Login() {
 
 
 {/* /////just here to test out the auth////// */}
-{!loggedInUsername ? (
+{/* {!loggedInUsername ? (
       <button onClick={getProfile}>Get Profile</button> 
   ) : (
   <>
       <div>Username: {loggedInUsername}</div>
       <button onClick={resetProfile}>Reset</button> 
   </>
-)}
+)} */}
 {/*  ^^^^^^/////////////*/}
 
 
