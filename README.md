@@ -103,3 +103,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#### Next Steps:
+
+* Add edit button and forms to vocab and notes. 
+* Add ability to assign a category to words and add feature to make words and notes sortable by categories. 
+* Add tabs for multiple languages to allow users to store notes and words for different languages.
+* Add practice feature to vocab words (toggle to turn off definitiones, flashcard game, etc.).
+* Add text editor to notes page to allow user to bold, italicize, highlight, color code, etc. the font for their notes. 
+* Add customizable user profile tab. 
+* Create tab for practice goals checklist. 
+* Build out features for both human and programming languages. 
+

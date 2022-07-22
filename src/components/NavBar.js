@@ -11,7 +11,6 @@ function NavBar() {
 
   let activeClassName = "underline"
 
-
   return (
     <nav>
       <ul>

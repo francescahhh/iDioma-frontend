@@ -15,3 +15,45 @@ function Home() {
 }
 
 export default Home;
+
+
+  ////////////////
+  //this is just to test out the auth
+  // const [loggedInUsername, setLoggedInUsername] = useState('')
+  //^^^^^^^^
+
+
+  //just here to test the auth/////////
+//   function getProfile() {
+//     fetch(`${API}/profile`, {
+//       method: 'GET',
+//       headers: { 
+//         Accepts: 'application/json',
+//       'Content-type': 'application/json',
+//       'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+//     }
+//     })
+//     .then((res) => res.json())
+//     .then(json => {
+//       console.log('got profile', json);
+//     setLoggedInUsername(json.username);
+//     })
+//   }
+
+//   function resetProfile() {
+//     setLoggedInUsername();
+//   }
+// //^^^^^/////////////////
+
+
+// {/* /////just here to test out the auth////// */}
+// {/* {!loggedInUsername ? (
+//       <button onClick={getProfile}>Get Profile</button> 
+//   ) : (
+//   <>
+//       <div>Username: {loggedInUsername}</div>
+//       <button onClick={resetProfile}>Reset</button> 
+//   </>
+// )} */}
+// {/*  ^^^^^^/////////////*/}
+

@@ -10,40 +10,12 @@ function Login() {
   const [user, updateUserState, resetUser] = useUserState();
   const loginApi = useFetchApi('/login', onLoggedIn, 'POST');
 
-
-  ////////////////
-  //this is just to test out the auth
-  // const [loggedInUsername, setLoggedInUsername] = useState('')
-  //^^^^^^^^
-
   function submitLogin(e) {
     e.preventDefault();
     loginApi({ user: { username: user.username, password: user.password }});
     resetUser({});
     navigate('/'); 
   }
-
-//just here to test the auth/////////
-//   function getProfile() {
-//     fetch(`${API}/profile`, {
-//       method: 'GET',
-//       headers: { 
-//         Accepts: 'application/json',
-//       'Content-type': 'application/json',
-//       'Authorization': `Bearer ${localStorage.getItem('jwt')}`
-//     }
-//     })
-//     .then((res) => res.json())
-//     .then(json => {
-//       console.log('got profile', json);
-//     setLoggedInUsername(json.username);
-//     })
-//   }
-
-//   function resetProfile() {
-//     setLoggedInUsername();
-//   }
-// //^^^^^/////////////////
 
 function onLoggedIn(json) {
   console.log('LOGGED IN:', json.jwt);
@@ -79,20 +51,6 @@ function onLoggedIn(json) {
       </form>
       <p>Don't have an account? <Link to='/createaccount'>Sign up here!</Link>
       </p>
-
-
-{/* /////just here to test out the auth////// */}
-{/* {!loggedInUsername ? (
-      <button onClick={getProfile}>Get Profile</button> 
-  ) : (
-  <>
-      <div>Username: {loggedInUsername}</div>
-      <button onClick={resetProfile}>Reset</button> 
-  </>
-)} */}
-{/*  ^^^^^^/////////////*/}
-
-
     </div>
     <Footer />
     </div>
